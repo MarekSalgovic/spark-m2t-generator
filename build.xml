@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="compile" name="cz.vutbr.fit.dip">
+
+    <property name="SOURCE_FOLDER" value="${basedir}/src/"/>
+    <property name="OUTPUT_FOLDER" value="${basedir}/bin/"/>
+    <property name="LIBS_FOLDER" value="${basedir}/libs/"/>
+    <path id="cz.vutbr.fit.dip.classpath">
+        <path refid="cz.vutbr.fit.dip.libraryclasspath" />
+    </path>
+
+    <!-- The classpath with only the dependencies used by the project (a dependency with the parser is required) -->
+    <path id="cz.vutbr.fit.dip.libraryclasspath">
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.core.runtime_3.24.0.v20210910-0750.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.osgi_3.17.100.v20211104-1730.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.osgi.compatibility.state_1.2.500.v20210730-0750.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.equinox.common_3.15.100.v20211021-1418.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.core.jobs_3.12.0.v20210723-1034.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.equinox.registry_3.11.100.v20211021-1418.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.equinox.preferences_3.9.100.v20211021-1418.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.core.contenttype_3.8.100.v20210910-0640.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.equinox.app_1.6.100.v20211021-1418.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.uml2.uml_5.5.0.v20210228-1829.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.emf.ecore_2.25.0.v20210816-0937.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.emf.common_2.23.0.v20210924-1718.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.emf.ecore.xmi_2.16.0.v20190528-0725.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.uml2.common_2.5.0.v20210228-1829.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.uml2.types_2.5.0.v20210228-1829.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.emf.mapping.ecore2xml_2.11.0.v20180706-1146.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.uml2.uml.resources_5.5.0.v20210228-1829.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.uml2.uml.profile.standard_1.5.0.v20210228-1829.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.ocl_3.17.0.v20211130-1448.jar"/>
+        <pathelement location="${LIBS_FOLDER}/lpg.runtime.java_2.0.17.v201004271640.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.ocl.common_1.17.0.v20211130-1448.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.ocl.ecore_3.17.0.v20211130-1448.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.acceleo.parser-3.5.1.201409021433.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.acceleo.common_3.7.11.202102190929.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.acceleo.model_3.7.11.202102190929.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.acceleo.profiler_3.7.11.202102190929.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.acceleo.engine_3.7.11.202102190929.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.emf.codegen.ecore_2.28.0.v20210925-0555.jar"/>
+        <pathelement location="${LIBS_FOLDER}/org.eclipse.emf.codegen_2.22.0.v20210420-0623.jar"/>
+        <pathelement location="${LIBS_FOLDER}/com.google.guava_30.1.0.v20210127-2300.jar"/>
+    </path>
+
+
+    <taskdef id="acceleoCompiler" name="acceleoCompiler" classname="org.eclipse.acceleo.parser.compiler.AcceleoCompiler" classpath="${LIBS_FOLDER}/org.eclipse.acceleo.parser-3.5.1.201409021433.jar" >
+    </taskdef>
+
+    <!-- Change the value of the property SOURCE_FOLDERS to match the configuration of your project. -->
+    <target name="compile">
+        <acceleoCompiler sourceFolder="${SOURCE_FOLDER}"
+                         outputFolder="${OUTPUT_FOLDER}"
+                         dependencies=""
+                         binaryResource="false"
+                         packagesToRegister="cz.vutbr.fit.dip.main">
+        </acceleoCompiler>
+    </target>
+</project>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:sparkmetamodel="http:///schemas/sparkmetamodel/_KMpS0M09EeyvOMTzmB3CAQ/35" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/sparkmetamodel/_KMpS0M09EeyvOMTzmB3CAQ/35 ../spark-metamodel/spark-metamodel.profile.uml#_KVH5YM09EeyvOMTzmB3CAQ">
+  <uml:Model xmi:id="_3RNGcKtkEey_3v8OjOLJPw" name="sparkWordCount">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_3SeRwKtkEey_3v8OjOLJPw">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Model" xmi:id="_Tvz1EKtlEey_3v8OjOLJPw" name="WordCount">
+      <packagedElement xmi:type="uml:Class" xmi:id="_nFAvMKtlEey_3v8OjOLJPw" name="Parallelizer"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_vaKcQKtlEey_3v8OjOLJPw" name="WordSplitter"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_7MOVEKtlEey_3v8OjOLJPw" informationSource="_nFAvMKtlEey_3v8OjOLJPw" informationTarget="_vaKcQKtlEey_3v8OjOLJPw">
+        <conveyed xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_-WZyEKtlEey_3v8OjOLJPw" name="CountAdder"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_Xzl-IKtmEey_3v8OjOLJPw" informationSource="_vaKcQKtlEey_3v8OjOLJPw" informationTarget="_-WZyEKtlEey_3v8OjOLJPw">
+        <conveyed xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_b9ZFEKtmEey_3v8OjOLJPw" name="Counter"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_cu3lUKtmEey_3v8OjOLJPw" name="Printer"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_lqWSkKtmEey_3v8OjOLJPw" conveyed="_LH6VsKtmEey_3v8OjOLJPw" informationSource="_-WZyEKtlEey_3v8OjOLJPw" informationTarget="_b9ZFEKtmEey_3v8OjOLJPw"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_vzNY8KtmEey_3v8OjOLJPw" conveyed="_LH6VsKtmEey_3v8OjOLJPw" informationSource="_b9ZFEKtmEey_3v8OjOLJPw" informationTarget="_cu3lUKtmEey_3v8OjOLJPw"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_LH6VsKtmEey_3v8OjOLJPw" name="WordCount">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_RxSdcKtmEey_3v8OjOLJPw" name="Word">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_UHLWwKtmEey_3v8OjOLJPw" name="Count">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_TzJmcLOIEeyW6eZGzZv5Ng" name="Result Printer"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_Vf3fQM1YEeyvOMTzmB3CAQ" informationSource="_cu3lUKtmEey_3v8OjOLJPw" informationTarget="_TzJmcLOIEeyW6eZGzZv5Ng"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_wJkzUK1PEey_3v8OjOLJPw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_UYwGMM1YEeyvOMTzmB3CAQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_UYwGMc1YEeyvOMTzmB3CAQ" key="Version" value="0.0.36"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_UYwGMs1YEeyvOMTzmB3CAQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_UYwGM81YEeyvOMTzmB3CAQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_UYwGNM1YEeyvOMTzmB3CAQ" key="Date" value="2022-05-06"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_UYwGNc1YEeyvOMTzmB3CAQ" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wJtWMK1PEey_3v8OjOLJPw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../spark-metamodel/spark-metamodel.profile.uml#_KVH5YM09EeyvOMTzmB3CAQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../spark-metamodel/spark-metamodel.profile.uml#_crMAwIwNEeyxgq_SKmJ8ZQ"/>
+    </profileApplication>
+  </uml:Model>
+  <sparkmetamodel:SparkApplication xmi:id="_WoqRgKtlEey_3v8OjOLJPw" master="argMaster" base_Model="_Tvz1EKtlEey_3v8OjOLJPw">
+    <conf xmi:type="sparkmetamodel:Option" xmi:id="_lik3sMMBEeygWLIJWA0Edg" key="something" value="&quot;val&quot;"/>
+    <conf xmi:type="sparkmetamodel:Option" xmi:id="_AAlgMMMFEeygWLIJWA0Edg" key="something2" value="&quot;val2&quot;"/>
+    <arguments xmi:type="sparkmetamodel:ProgramArgument" xmi:id="_lfqasMMOEeygWLIJWA0Edg" name="argMaster" defaultValue="local[*]">
+      <dataType xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </arguments>
+    <arguments xmi:type="sparkmetamodel:ProgramArgument" xmi:id="_347bkMMPEeygWLIJWA0Edg" name="argInt" defaultValue="1">
+      <dataType xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </arguments>
+    <arguments xmi:type="sparkmetamodel:ProgramArgument" xmi:id="_6tjfUMMPEeygWLIJWA0Edg" name="argReal" defaultValue="1.1">
+      <dataType xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+    </arguments>
+    <arguments xmi:type="sparkmetamodel:ProgramArgument" xmi:id="_lbZ-EMMUEeygWLIJWA0Edg" name="argBool" defaultValue="true">
+      <dataType xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </arguments>
+    <imports>scala.math.random</imports>
+    <imports>scala.io.StdIn</imports>
+  </sparkmetamodel:SparkApplication>
+  <sparkmetamodel:RDDTransformation xmi:id="_BvcxgKtmEey_3v8OjOLJPw" base_Class="_-WZyEKtlEey_3v8OjOLJPw" func="map(x=>(x,1L))"/>
+  <sparkmetamodel:RDDTransformation xmi:id="_nYbukKtyEey_3v8OjOLJPw" base_Class="_vaKcQKtlEey_3v8OjOLJPw" func="flatMap(x=>x.split(' '))"/>
+  <sparkmetamodel:Parallelize xmi:id="_vfbaMK07Eey_3v8OjOLJPw" base_Class="_nFAvMKtlEey_3v8OjOLJPw" array="Seq(&quot;hello world&quot;, &quot;hello spark&quot;, &quot;spark uml&quot;)"/>
+  <sparkmetamodel:RDDAction xmi:id="_XVD0YLJ_EeyW6eZGzZv5Ng" base_Class="_cu3lUKtmEey_3v8OjOLJPw" func="collect()"/>
+  <sparkmetamodel:CodeBlock xmi:id="_Wvy9wLOIEeyW6eZGzZv5Ng" base_Class="_TzJmcLOIEeyW6eZGzZv5Ng" code="println($out.mkString(&quot; &quot;))"/>
+  <sparkmetamodel:RDDTransformation xmi:id="_u6qeoM1YEeyvOMTzmB3CAQ" base_Class="_b9ZFEKtmEey_3v8OjOLJPw" func="reduceByKey(_+_)"/>
+  <sparkmetamodel:Tuple xmi:id="_1mWTgM1YEeyvOMTzmB3CAQ" base_DataType="_LH6VsKtmEey_3v8OjOLJPw"/>
+</xmi:XMI>

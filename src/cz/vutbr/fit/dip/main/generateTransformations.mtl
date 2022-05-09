@@ -1,0 +1,98 @@
+[comment encoding = UTF-8 /]
+[module generateTransformations('http://www.eclipse.org/uml2/5.0.0/UML')]
+[import cz::vutbr::fit::dip::services::uml2services /]
+[import cz::vutbr::fit::dip::main::generateUtils /]
+
+[template public generateTransformationClasses(aModel : Model)]
+[for (aClass : Class | aModel.eContents(Class))]
+[generateClass(aClass, aModel)/]
+[/for]
+[generateLoopClasses(aModel, aModel)/]
+[/template]
+
+
+[template private generateLoopClasses(aLoop : Model, aModel : Model)]
+[for (anInsideLoop : Model | aLoop.eContents(Model))]
+[if anInsideLoop.isStereotype('Iteration Loop') or anInsideLoop.isStereotype('Conditional Loop')]
+[for (aClass : Class | anInsideLoop.eContents(Class))]
+[generateClass(aClass, aModel)/]
+[/for]
+[generateLoopClasses(anInsideLoop, aModel)/]
+[/if]
+[/for]
+[/template]
+
+[template private generateClass(aClass : Class, aModel : Model)]
+[if (aClass.isStereotype('RDD Transformation') or aClass.isStereotype('Dataset Transformation'))]
+[file ('src/main/scala/'+(formatClassName(aModel.name)+'/transformations/' + (formatClassName(aClass.name)) + '.scala'), false, 'UTF-8')]
+package [formatClassName(aModel.name)/].transformations
+
+[generateImports(aModel)/]
+[if (containsDataTypes(aModel))]
+import [formatClassName(aModel.name)/].dataTypes._
+[/if]
+
+class [formatClassName(aClass.name)/]([if aClass.isStereotype('Dataset Transformation')]spark: SparkSession[/if]) {
+	[aClass.generateTaggedValuesAsAttributes()/]
+	def transform['['/]T: TypeTag[']'/](rdd: RDD['['/]T[']'/][generateFunctionDefinitionArguments(aClass, aModel, false)/]) = {
+		[if aClass.isStereotype('Dataset Transformation')]
+		import spark.implicits._
+		[/if]
+		typeOf['['/]T[']'/] match {
+			[for (input : Relationship | aClass.getTargetDirectedRelationships())]
+			[if input.oclIsTypeOf(InformationFlow)]
+			case type[i/] if type[i/] =:= typeOf['['/][input.oclAsType(InformationFlow).getTypeForFlow().generateType(aModel)/][']'/] =>
+				rdd.asInstanceOf['['/]RDD['['/][input.oclAsType(InformationFlow).getTypeForFlow().generateType(aModel)/][']'/][']'/]
+					[if aClass.isStereotype('RDD Transformation')]
+					[geneteRDD(aClass)/]
+					[elseif aClass.isStereotype('Dataset Transformation')]
+					[generateDataset(aClass, input.oclAsType(InformationFlow).getTypeForFlow(), aModel)/]
+					[/if]	
+			[/if]
+			[/for]
+		}
+	}
+	//[protected (aClass.name)]
+	//[/protected]
+}
+[/file]
+[/if]
+[/template]
+
+[template private geneteRDD(aClass : Class)]
+.[aClass.getTaggedValue('RDD Transformation', 'func')/]
+[/template]
+
+[template private generateDataset(aClass : Class, type : Type, aModel : Model)]
+.toDS().as("this").[aClass.getTaggedValue('Dataset Transformation', 'func')/].as['['/][type.generateType(aModel)/][']'/].rdd
+[/template]
+
+
+
+
+[template public generateInitTransformations(aModel : Model)]
+// transformations
+[for (aClass : Class | aModel.eContents(Class))]
+[if (aClass.isStereotype('RDD Transformation') or aClass.isStereotype('Dataset Transformation'))]
+[generateInitTransformation(aClass)/]
+[/if]
+[/for]
+[generateLoopInit(aModel, aModel)/]
+[/template]
+
+[template private generateInitTransformation(aClass : Class)]
+val T_[formatVariable(aClass.name)/] = new [formatClassName(aClass.name)/]([if aClass.isStereotype('Dataset Transformation')]spark[/if])
+[/template]
+
+[template private generateLoopInit(aLoop : Model, aModel : Model)]
+[for (anInsideLoop : Model | aLoop.eContents(Model))]
+[if anInsideLoop.isStereotype('Iteration Loop') or anInsideLoop.isStereotype('Conditional Loop')]
+[for (aClass : Class | anInsideLoop.eContents(Class))]
+[if (aClass.isStereotype('RDD Transformation') or aClass.isStereotype('Dataset Transformation'))]
+[generateInitTransformation(aClass)/]
+[/if]
+[/for]
+[generateLoopInit(anInsideLoop, aModel)/]
+[/if]
+[/for]
+[/template]

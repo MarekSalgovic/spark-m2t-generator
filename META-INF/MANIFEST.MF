@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Acceleo Example Module Runtime Plug-in
+Bundle-SymbolicName: cz.vutbr.fit.dip
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: cz.fit.vutbr.dip.Activator
+Bundle-Vendor: Eclipse Modeling Project
+Require-Bundle: org.eclipse.core.runtime, 
+ org.eclipse.uml2.uml, 
+ org.eclipse.uml2.uml.resources,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.ocl,
+ org.eclipse.ocl.ecore,
+ org.eclipse.acceleo.common;bundle-version="3.3.0",
+ org.eclipse.acceleo.model;bundle-version="3.3.0",
+ org.eclipse.acceleo.profiler;bundle-version="3.3.0",
+ org.eclipse.acceleo.engine;bundle-version="3.3.0",
+ com.google.guava
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true
+Export-Package: cz.vutbr.fit.dip.main,
+ cz.vutbr.fit.dip.services
+

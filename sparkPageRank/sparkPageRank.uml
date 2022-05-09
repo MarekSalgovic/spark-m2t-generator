@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:sparkmetamodel="http:///schemas/sparkmetamodel/_rK_foMp-EeyvOMTzmB3CAQ/33" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/sparkmetamodel/_rK_foMp-EeyvOMTzmB3CAQ/33 ../spark-metamodel/spark-metamodel.profile.uml#_rTU8QMp-EeyvOMTzmB3CAQ">
+  <uml:Model xmi:id="_WTuaMMNJEeygWLIJWA0Edg" name="sparkPageRank">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_WUcy8MNJEeygWLIJWA0Edg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Model" xmi:id="_ZdCUgMNJEeygWLIJWA0Edg" name="Spark Page Rank">
+      <packagedElement xmi:type="uml:Class" xmi:id="_orKrkMNJEeygWLIJWA0Edg" name="File Source"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_tNnGkMNKEeygWLIJWA0Edg" name="Splitter"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_1Qh0IMNKEeygWLIJWA0Edg" name="Iterable Value Tuple" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_5DZBwMNKEeygWLIJWA0Edg" name="Key">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_7iN0oMNKEeygWLIJWA0Edg" name="IterableValue" visibility="public">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-00i8MNMEeygWLIJWA0Edg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-O39QMNMEeygWLIJWA0Edg" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_-QMd0MNKEeygWLIJWA0Edg" informationSource="_orKrkMNJEeygWLIJWA0Edg" informationTarget="_tNnGkMNKEeygWLIJWA0Edg">
+        <conveyed xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_ks3QsMNOEeygWLIJWA0Edg" name="Tuple">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_nNSmEMNOEeygWLIJWA0Edg" name="Key">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_pKUTcMNOEeygWLIJWA0Edg" name="Value">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_xDkHoMNOEeygWLIJWA0Edg" name="Count Adder"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_4nH_sMNOEeygWLIJWA0Edg" conveyed="_1Qh0IMNKEeygWLIJWA0Edg" informationSource="_tNnGkMNKEeygWLIJWA0Edg" informationTarget="_xDkHoMNOEeygWLIJWA0Edg"/>
+      <packagedElement xmi:type="uml:Model" xmi:id="_8zTFMMNOEeygWLIJWA0Edg" name="Loop">
+        <packagedElement xmi:type="uml:Class" xmi:id="_QH5iYMNPEeygWLIJWA0Edg" name="Contribs"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_76CFcMNPEeygWLIJWA0Edg" name="Calculate Ranks" visibility="public"/>
+        <packagedElement xmi:type="uml:InformationFlow" xmi:id="_Lq_cwMNQEeygWLIJWA0Edg" conveyed="_ks3QsMNOEeygWLIJWA0Edg" informationSource="_QH5iYMNPEeygWLIJWA0Edg" informationTarget="_76CFcMNPEeygWLIJWA0Edg"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_QZ0jYMNQEeygWLIJWA0Edg" name="re-assign ranks"/>
+        <packagedElement xmi:type="uml:InformationFlow" xmi:id="_SghxMMNQEeygWLIJWA0Edg" informationSource="_76CFcMNPEeygWLIJWA0Edg" informationTarget="_QZ0jYMNQEeygWLIJWA0Edg"/>
+        <packagedElement xmi:type="uml:InformationFlow" xmi:id="_qa6RQMNREeygWLIJWA0Edg" conveyed="_ks3QsMNOEeygWLIJWA0Edg" informationSource="_76CFcMNPEeygWLIJWA0Edg" informationTarget="_dpm-cMNQEeygWLIJWA0Edg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_NNHMQMNPEeygWLIJWA0Edg" informationSource="_xDkHoMNOEeygWLIJWA0Edg"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_V-xPIMNPEeygWLIJWA0Edg" name="ranks"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_0A7bMMNPEeygWLIJWA0Edg" conveyed="_1Qh0IMNKEeygWLIJWA0Edg" informationSource="_tNnGkMNKEeygWLIJWA0Edg" informationTarget="_QH5iYMNPEeygWLIJWA0Edg"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_dpm-cMNQEeygWLIJWA0Edg" name="Collector"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_rk7tAMNUEeygWLIJWA0Edg" name="filePath"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_BZxGUMPZEeygWLIJWA0Edg" conveyed="_ks3QsMNOEeygWLIJWA0Edg" informationSource="_xDkHoMNOEeygWLIJWA0Edg" informationTarget="_V-xPIMNPEeygWLIJWA0Edg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ZOxAQMNPEeygWLIJWA0Edg" memberEnd="_ZO48EMNPEeygWLIJWA0Edg _ZPCtEMNPEeygWLIJWA0Edg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZO3t8MNPEeygWLIJWA0Edg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZO3t8cNPEeygWLIJWA0Edg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_ZO48EMNPEeygWLIJWA0Edg" name="contribs" type="_QH5iYMNPEeygWLIJWA0Edg" association="_ZOxAQMNPEeygWLIJWA0Edg"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_ZPCtEMNPEeygWLIJWA0Edg" name="ranks" type="_V-xPIMNPEeygWLIJWA0Edg" association="_ZOxAQMNPEeygWLIJWA0Edg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_v_Nf8MNUEeygWLIJWA0Edg" memberEnd="_v_X4AMNUEeygWLIJWA0Edg _v_biYMNUEeygWLIJWA0Edg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_v_WC0MNUEeygWLIJWA0Edg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_v_XQ8MNUEeygWLIJWA0Edg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_v_X4AMNUEeygWLIJWA0Edg" type="_rk7tAMNUEeygWLIJWA0Edg" association="_v_Nf8MNUEeygWLIJWA0Edg"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_v_biYMNUEeygWLIJWA0Edg" type="_orKrkMNJEeygWLIJWA0Edg" association="_v_Nf8MNUEeygWLIJWA0Edg"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Ye_X4MNJEeygWLIJWA0Edg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YfAmAMNJEeygWLIJWA0Edg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../spark-metamodel/spark-metamodel.profile.uml#_rTU8QMp-EeyvOMTzmB3CAQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../spark-metamodel/spark-metamodel.profile.uml#_crMAwIwNEeyxgq_SKmJ8ZQ"/>
+    </profileApplication>
+  </uml:Model>
+  <sparkmetamodel:SparkApplication xmi:id="_k_ec8MNJEeygWLIJWA0Edg" master="&quot;local[*]&quot;" base_Model="_ZdCUgMNJEeygWLIJWA0Edg" initialCodeBlock="">
+    <arguments xmi:type="sparkmetamodel:ProgramArgument" xmi:id="_xsmP0MNJEeygWLIJWA0Edg" name="iters" defaultValue="10">
+      <dataType xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </arguments>
+    <arguments xmi:type="sparkmetamodel:ProgramArgument" xmi:id="_DGIugMNKEeygWLIJWA0Edg" name="filePath" defaultValue="">
+      <dataType xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </arguments>
+  </sparkmetamodel:SparkApplication>
+  <sparkmetamodel:FileSource xmi:id="_8UQLAMNJEeygWLIJWA0Edg" base_Class="_orKrkMNJEeygWLIJWA0Edg" filePath="filePath" format="Text"/>
+  <sparkmetamodel:RDDTransformation xmi:id="_vfRAIMNKEeygWLIJWA0Edg" base_Class="_tNnGkMNKEeygWLIJWA0Edg" func="map{ s =>&#xA;      val parts = s.split(&quot;\\s+&quot;)&#xA;      (parts(0), parts(1))&#xA;    }.distinct().groupByKey()"/>
+  <sparkmetamodel:Tuple xmi:id="_3FjcEMNKEeygWLIJWA0Edg" base_DataType="_1Qh0IMNKEeygWLIJWA0Edg"/>
+  <sparkmetamodel:Tuple xmi:id="_mUOQEMNOEeygWLIJWA0Edg" base_DataType="_ks3QsMNOEeygWLIJWA0Edg"/>
+  <sparkmetamodel:RDDTransformation xmi:id="_0Z-p0MNOEeygWLIJWA0Edg" base_Class="_xDkHoMNOEeygWLIJWA0Edg" func="mapValues(x=>1.0)"/>
+  <sparkmetamodel:IterationLoop xmi:id="__B1ZUMNOEeygWLIJWA0Edg" base_Model="_8zTFMMNOEeygWLIJWA0Edg" iterations="iters"/>
+  <sparkmetamodel:Flow xmi:id="_OWZIgMNPEeygWLIJWA0Edg" base_InformationFlow="_4nH_sMNOEeygWLIJWA0Edg" priority="1"/>
+  <sparkmetamodel:RDDTransformation xmi:id="_SIFRcMNPEeygWLIJWA0Edg" base_Class="_QH5iYMNPEeygWLIJWA0Edg" func="join(ranks).values.flatMap{ case (urls, rank) =>&#xA;        val size = urls.size&#xA;        urls.map(url => (url, rank / size))&#xA;      }"/>
+  <sparkmetamodel:Variable xmi:id="_XbC_4MNPEeygWLIJWA0Edg" base_Class="_V-xPIMNPEeygWLIJWA0Edg" dataType="_ks3QsMNOEeygWLIJWA0Edg" isRDD="true"/>
+  <sparkmetamodel:Argument xmi:id="_ae1hAMNPEeygWLIJWA0Edg" base_Association="_ZOxAQMNPEeygWLIJWA0Edg"/>
+  <sparkmetamodel:RDDTransformation xmi:id="_-uct0MNPEeygWLIJWA0Edg" base_Class="_76CFcMNPEeygWLIJWA0Edg" func="reduceByKey(_ + _).mapValues(0.15 + 0.85 * _)"/>
+  <sparkmetamodel:CodeBlock xmi:id="_V_ImEMNQEeygWLIJWA0Edg" base_Class="_QZ0jYMNQEeygWLIJWA0Edg" code="ranks = $out"/>
+  <sparkmetamodel:Flow xmi:id="_cEuEQMNQEeygWLIJWA0Edg" base_InformationFlow="_SghxMMNQEeygWLIJWA0Edg" priority="1"/>
+  <sparkmetamodel:RDDAction xmi:id="_e5_BMMNQEeygWLIJWA0Edg" base_Class="_dpm-cMNQEeygWLIJWA0Edg" func="collect().foreach(tup => println(s&quot;${tup._1} has rank:  ${tup._2} .&quot;))"/>
+  <sparkmetamodel:Variable xmi:id="_tmlbsMNUEeygWLIJWA0Edg" base_Class="_rk7tAMNUEeygWLIJWA0Edg">
+    <dataType xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </sparkmetamodel:Variable>
+  <sparkmetamodel:Argument xmi:id="_wqR2MMNUEeygWLIJWA0Edg" base_Association="_v_Nf8MNUEeygWLIJWA0Edg"/>
+</xmi:XMI>

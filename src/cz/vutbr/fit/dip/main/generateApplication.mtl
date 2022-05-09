@@ -1,0 +1,101 @@
+[comment encoding = UTF-8 /]
+[module generateApplication('http://www.eclipse.org/uml2/5.0.0/UML')/]
+[import cz::vutbr::fit::dip::main::generateUtils /]
+[import cz::vutbr::fit::dip::services::uml2services /]
+[import cz::vutbr::fit::dip::main::generateSources /]
+[import cz::vutbr::fit::dip::main::generateActions /]
+[import cz::vutbr::fit::dip::main::generateDataTypes /]
+[import cz::vutbr::fit::dip::main::generateTransformations /]
+
+[template public generateApplication(aModel : Model)]
+[if aModel.isStereotype('Spark Application')]
+[file ('src/main/scala/'+formatClassName(aModel.name)+'/'+formatClassName(aModel.name)+'App.scala', false, 'UTF-8')]
+package [formatClassName(aModel.name)/]
+
+[generateImports(aModel)/]
+import [formatClassName(aModel.name)/].sources._
+import [formatClassName(aModel.name)/].transformations._
+import [formatClassName(aModel.name)/].actions._
+[if (containsDataTypes(aModel))]
+import [formatClassName(aModel.name)/].dataTypes._
+[/if]
+
+object [formatClassName(aModel.name)/]App {
+	[aModel.generateTaggedValuesAsAttributes()/]
+	
+	def main(args: Array['['/]String[']'/]) {
+		//[protected ('pre-sparkSession')]
+		//[/protected]
+		[generateArgs(aModel.generateArgs())/]		
+		val conf = new SparkConf()
+						.setMaster([aModel.getTaggedValue('Spark Application', 'master')/])
+						.setAppName("[aModel.name/]")[generateOptionConf(aModel, 'Spark Application', true)/]
+		val spark: SparkSession = SparkSession.builder.config(conf).getOrCreate()
+		[generateInitialCodeBlock(aModel.getTaggedValue('Spark Application', 'initialCodeBlock').toString())/]
+		//[protected ('post-sparkSession')]
+		//[/protected]
+		
+		[generateVariables(aModel)/]
+		[generateInitSources(aModel)/]
+		[generateInitTransformations(aModel)/]
+		[generateInitActions(aModel)/]
+
+		[generateVarDefsInLoopTempl(aModel)/]
+
+		[generateComputationTempl(aModel)/]
+		spark.stop()
+		//[protected ('post-app')]
+		//[/protected]
+	}
+}
+[/file]
+[/if]
+[/template]
+
+[template private generateArgs (aString : String)]
+[aString/]
+[/template]
+
+[template private generateInitialCodeBlock (aString : String)]
+[aString/]
+[/template]
+
+[template private generateComputationTempl(aModel : Model)]
+[generateComputation(aModel)/]
+[/template]
+
+[template private generateVarDefsInLoopTempl(aModel : Model)]
+[generateVarDefsInLoop(aModel)/]
+[/template]
+
+
+[template private generateVariables(aModel : Model)]
+// variables
+[for (aClass : Class | aModel.eContents(Class))]
+[if (aClass.isStereotype('Variable') and not isInArguments(aClass, aModel))]
+[generateInitVariable(aClass, aModel)/]
+[/if]
+[/for]
+[generateLoopInit(aModel, aModel)/]
+[/template]
+
+
+[template private generateInitVariable(aClass : Class, aModel : Model)]
+var [formatVariable(aClass.name)/]: [generateVariableType(aClass, aModel)/] = null
+[/template]
+
+[template private generateLoopInit(aLoop : Model, aModel : Model)]
+[for (anInsideLoop : Model | aLoop.eContents(Model))]
+[if anInsideLoop.isStereotype('Iteration Loop') or anInsideLoop.isStereotype('Conditional Loop')]
+[for (aClass : Class | anInsideLoop.eContents(Class))]
+[if (aClass.isStereotype('Variable') and not isInArguments(aClass, aModel))]
+[generateInitVariable(aClass, aModel)/]
+[/if]
+[/for]
+[generateLoopInit(anInsideLoop, aModel)/]
+[/if]
+[/for]
+[/template]
+
+
+

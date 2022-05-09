@@ -1,0 +1,80 @@
+[comment encoding = UTF-8 /]
+[module generateSources('http://www.eclipse.org/uml2/5.0.0/UML')/]
+[import cz::vutbr::fit::dip::main::generateUtils/]
+[import cz::vutbr::fit::dip::services::uml2services/]
+
+[template public generateSourceClasses(aModel : Model)]
+[for (aClass : Class | aModel.eContents(Class))]
+[if (aClass.isStereotype('File Source') 
+or aClass.isStereotype('Parallelize')
+or aClass.isStereotype('SQL')
+or aClass.isStereotype('JDBC'))]
+[file ('src/main/scala/'+(formatClassName(aModel.name)+'/sources/' + formatClassName(aClass.name) + '.scala'), false, 'UTF-8')]
+package [formatClassName(aModel.name)/].sources
+
+[generateImports(aModel)/]
+[if (containsDataTypes(aModel))]
+import [formatClassName(aModel.name)/].dataTypes._
+[/if]
+
+class [formatClassName(aClass.name)/](spark: SparkSession) {
+	[generateTaggedValuesAsAttributes(aClass.oclAsType(Element))/]
+	def source([generateFunctionDefinitionArguments(aClass, aModel, true)/]) = {
+		[if aClass.isStereotype('File Source')]
+		[generateFileSource(aClass)/]
+		[elseif aClass.isStereotype('Parallelize')]
+		[generateRDDParallelize(aClass)/]
+		[elseif aClass.isStereotype('SQL')]
+		[generateSQL(aClass)/]
+		[elseif aClass.isStereotype('JDBC')]
+		[generateJDBC(aClass)/]
+		[/if]
+	}
+}
+[/file]
+[/if]
+[/for]
+[/template]
+
+
+[template private generateFileSource(aClass : Class)]
+[if aClass.getTaggedValue('File Source', 'format').oclAsType(EnumerationLiteral).name <> 'Text']
+import spark.implicits._
+spark.read.format("[aClass.getTaggedValue('File Source', 'format').oclAsType(EnumerationLiteral).name/]")
+	.option("inferSchema", "true").option("header", "true")[generateOptionConf(aClass, 'File Source', false)/]
+	.load([aClass.getTaggedValue('File Source', 'filePath')/])
+	.as['['/][aClass.getTaggedValue('File Source', 'dataType').oclAsType(DataType).name/][']'/].rdd
+[elseif aClass.getTaggedValue('File Source', 'format').oclAsType(EnumerationLiteral).name = 'Text']
+	spark.sparkContext.textFile([aClass.getTaggedValue('File Source', 'filePath')/])
+[/if]
+[/template]
+
+[template private generateRDDParallelize(aClass : Class)]
+spark.sparkContext.parallelize([aClass.getTaggedValue('Parallelize', 'array')/])
+[/template]
+
+[template private generateSQL(aClass : Class)]
+spark.sql("[aClass.getTaggedValue('SQL', 'query')/]").as['['/][aClass.getTaggedValue('SQL', 'dataType').oclAsType(DataType).name/][']'/].rdd
+[/template]
+
+[template private generateJDBC(aClass : Class)]
+spark.read
+	.format("jdbc")
+  	.option("url", [aClass.getTaggedValue('JDBC', 'URL')/])
+  	.option("dbtable", [aClass.getTaggedValue('JDBC', 'tableName')/])
+  	.option("user", [aClass.getTaggedValue('JDBC', 'user')/])
+  	.option("password", [aClass.getTaggedValue('JDBC', 'password')/])
+	.load()
+[/template]
+
+[template public generateInitSources(aModel : Model)]
+// sources
+[for (aClass : Class | aModel.eContents(Class))]
+[if (aClass.isStereotype('File Source') 
+or aClass.isStereotype('Parallelize')
+or aClass.isStereotype('SQL')
+or aClass.isStereotype('JDBC'))]
+val S_[formatVariable(aClass.name)/] = new [formatClassName(aClass.name)/](spark)
+[/if]
+[/for]
+[/template]

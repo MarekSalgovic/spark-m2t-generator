@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:sparkmetamodel="http:///schemas/sparkmetamodel/_KMpS0M09EeyvOMTzmB3CAQ/35" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/sparkmetamodel/_KMpS0M09EeyvOMTzmB3CAQ/35 ../spark-metamodel/spark-metamodel.profile.uml#_KVH5YM09EeyvOMTzmB3CAQ">
+  <uml:Model xmi:id="_hiMkUM06EeyvOMTzmB3CAQ" name="dataset-processing">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_hjlEYM06EeyvOMTzmB3CAQ">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Model" xmi:id="_kar0YM06EeyvOMTzmB3CAQ" name="Dataset Processing">
+      <packagedElement xmi:type="uml:Class" xmi:id="_rgZ54M06EeyvOMTzmB3CAQ" name="FileSource"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_3p8ekM06EeyvOMTzmB3CAQ" name="Abbr">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_61i34M06EeyvOMTzmB3CAQ" name="State">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_9vI7MM06EeyvOMTzmB3CAQ" name="Abbreviation">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_NhlgQM07EeyvOMTzmB3CAQ" name="Team">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_QPFoUM07EeyvOMTzmB3CAQ" name="Name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_SDJm8M07EeyvOMTzmB3CAQ" name="State">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Sena8M07EeyvOMTzmB3CAQ" name="City">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S4HgEM07EeyvOMTzmB3CAQ" name="Venue">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_feDF0M07EeyvOMTzmB3CAQ" name="League">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_3Jp_gM07EeyvOMTzmB3CAQ" name="abbrs"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_CJbfwM08EeyvOMTzmB3CAQ" informationSource="_rgZ54M06EeyvOMTzmB3CAQ" informationTarget="_3Jp_gM07EeyvOMTzmB3CAQ"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_J4gEQM08EeyvOMTzmB3CAQ" name="ReplaceStateWithAbbr"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_kwcXEM08EeyvOMTzmB3CAQ" name="TeamSource"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_B6IDAM09EeyvOMTzmB3CAQ" conveyed="_NhlgQM07EeyvOMTzmB3CAQ" informationSource="_kwcXEM08EeyvOMTzmB3CAQ" informationTarget="_J4gEQM08EeyvOMTzmB3CAQ"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_hMi9EM09EeyvOMTzmB3CAQ" name="CitySource"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_5V14UM09EeyvOMTzmB3CAQ" conveyed="_ufG_UM09EeyvOMTzmB3CAQ" informationSource="_hMi9EM09EeyvOMTzmB3CAQ" informationTarget="_J4gEQM08EeyvOMTzmB3CAQ"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_r_jhwM0_EeyvOMTzmB3CAQ" name="team out var def">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_84nwoM0_EeyvOMTzmB3CAQ" name="team out var def"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_9cq44M0_EeyvOMTzmB3CAQ" name="city out var def"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_NWR14M1AEeyvOMTzmB3CAQ" conveyed="_ufG_UM09EeyvOMTzmB3CAQ" informationSource="_J4gEQM08EeyvOMTzmB3CAQ" informationTarget="_9cq44M0_EeyvOMTzmB3CAQ"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_R653oM1AEeyvOMTzmB3CAQ" name="Filter NBA"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_SWX2MM1BEeyvOMTzmB3CAQ" conveyed="_NhlgQM07EeyvOMTzmB3CAQ" informationSource="_J4gEQM08EeyvOMTzmB3CAQ" informationTarget="_R653oM1AEeyvOMTzmB3CAQ"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_eD070M1BEeyvOMTzmB3CAQ" informationSource="_R653oM1AEeyvOMTzmB3CAQ" informationTarget="_r_jhwM0_EeyvOMTzmB3CAQ"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_jS8FAM1BEeyvOMTzmB3CAQ" name="Save To File"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_oB-nAM1BEeyvOMTzmB3CAQ" name="outputPath"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_z_XmEM1BEeyvOMTzmB3CAQ" conveyed="_NhlgQM07EeyvOMTzmB3CAQ" informationSource="_R653oM1AEeyvOMTzmB3CAQ" informationTarget="_jS8FAM1BEeyvOMTzmB3CAQ"/>
+      <packagedElement xmi:type="uml:InformationFlow" xmi:id="_D7C_oM1CEeyvOMTzmB3CAQ" conveyed="_ufG_UM09EeyvOMTzmB3CAQ" informationSource="_J4gEQM08EeyvOMTzmB3CAQ" informationTarget="_jS8FAM1BEeyvOMTzmB3CAQ"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Xw9vQM1EEeyvOMTzmB3CAQ" name="abbrFilePath"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_PNzVAM08EeyvOMTzmB3CAQ" memberEnd="_POEawM08EeyvOMTzmB3CAQ _POIsMM08EeyvOMTzmB3CAQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_POAJUM08EeyvOMTzmB3CAQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_POBXcM08EeyvOMTzmB3CAQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_POEawM08EeyvOMTzmB3CAQ" type="_J4gEQM08EeyvOMTzmB3CAQ" association="_PNzVAM08EeyvOMTzmB3CAQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_POIsMM08EeyvOMTzmB3CAQ" type="_3Jp_gM07EeyvOMTzmB3CAQ" association="_PNzVAM08EeyvOMTzmB3CAQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_q4p2AM09EeyvOMTzmB3CAQ" name="imported">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_ufG_UM09EeyvOMTzmB3CAQ" name="City"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_vvGqwM1BEeyvOMTzmB3CAQ" memberEnd="_vvd3IM1BEeyvOMTzmB3CAQ _vviIkM1BEeyvOMTzmB3CAQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vvba4M1BEeyvOMTzmB3CAQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vvcpAM1BEeyvOMTzmB3CAQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_vvd3IM1BEeyvOMTzmB3CAQ" type="_jS8FAM1BEeyvOMTzmB3CAQ" association="_vvGqwM1BEeyvOMTzmB3CAQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_vviIkM1BEeyvOMTzmB3CAQ" type="_oB-nAM1BEeyvOMTzmB3CAQ" association="_vvGqwM1BEeyvOMTzmB3CAQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eCszEM1EEeyvOMTzmB3CAQ" memberEnd="_eDHCwM1EEeyvOMTzmB3CAQ _eDlj4M1EEeyvOMTzmB3CAQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_eDA8IM1EEeyvOMTzmB3CAQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_eDEmgM1EEeyvOMTzmB3CAQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_eDHCwM1EEeyvOMTzmB3CAQ" type="_rgZ54M06EeyvOMTzmB3CAQ" association="_eCszEM1EEeyvOMTzmB3CAQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_eDlj4M1EEeyvOMTzmB3CAQ" type="_Xw9vQM1EEeyvOMTzmB3CAQ" association="_eCszEM1EEeyvOMTzmB3CAQ"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_o_TPEM06EeyvOMTzmB3CAQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rPWCQM0-EeyvOMTzmB3CAQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rPWCQc0-EeyvOMTzmB3CAQ" key="Version" value="0.0.36"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rPWCQs0-EeyvOMTzmB3CAQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rPWCQ80-EeyvOMTzmB3CAQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rPWCRM0-EeyvOMTzmB3CAQ" key="Date" value="2022-05-06"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rPWCRc0-EeyvOMTzmB3CAQ" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_o_WSYM06EeyvOMTzmB3CAQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../spark-metamodel/spark-metamodel.profile.uml#_KVH5YM09EeyvOMTzmB3CAQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../spark-metamodel/spark-metamodel.profile.uml#_crMAwIwNEeyxgq_SKmJ8ZQ"/>
+    </profileApplication>
+  </uml:Model>
+  <sparkmetamodel:SparkApplication xmi:id="_qWmZMM06EeyvOMTzmB3CAQ" master="&quot;local[*]&quot;" base_Model="_kar0YM06EeyvOMTzmB3CAQ">
+    <arguments xmi:type="sparkmetamodel:ProgramArgument" xmi:id="_l-mBsM07EeyvOMTzmB3CAQ" name="abbrFilePath" defaultValue="./abbr.csv">
+      <dataType xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </arguments>
+    <imports>DatasetProcessing.imported.City</imports>
+  </sparkmetamodel:SparkApplication>
+  <sparkmetamodel:FileSource xmi:id="_zYpogM06EeyvOMTzmB3CAQ" base_Class="_rgZ54M06EeyvOMTzmB3CAQ" priority="5" filePath="abbrFilePath" dataType="_3p8ekM06EeyvOMTzmB3CAQ"/>
+  <sparkmetamodel:Variable xmi:id="_5QJx8M07EeyvOMTzmB3CAQ" base_Class="_3Jp_gM07EeyvOMTzmB3CAQ" dataType="_3p8ekM06EeyvOMTzmB3CAQ" isRDD="true"/>
+  <sparkmetamodel:DatasetTransformation xmi:id="_NJbCcM08EeyvOMTzmB3CAQ" base_Class="_J4gEQM08EeyvOMTzmB3CAQ" func="joinWith(abbrs.toDS().as(&quot;abbr&quot;), $&quot;this.State&quot; === $&quot;abbr.State&quot;, &quot;inner&quot;)&#xA;          .map(x => x._1.copy(State = x._2.Abbreviation))"/>
+  <sparkmetamodel:Argument xmi:id="_QBteMM08EeyvOMTzmB3CAQ" base_Association="_PNzVAM08EeyvOMTzmB3CAQ"/>
+  <sparkmetamodel:FileSource xmi:id="_m8YDIM08EeyvOMTzmB3CAQ" base_Class="_kwcXEM08EeyvOMTzmB3CAQ" priority="1" filePath="&quot;./teams.csv&quot;" dataType="_NhlgQM07EeyvOMTzmB3CAQ"/>
+  <sparkmetamodel:Flow xmi:id="_Ds9SkM09EeyvOMTzmB3CAQ" base_InformationFlow="_B6IDAM09EeyvOMTzmB3CAQ" tag="team"/>
+  <sparkmetamodel:FileSource xmi:id="_ilvkoM09EeyvOMTzmB3CAQ" base_Class="_hMi9EM09EeyvOMTzmB3CAQ" priority="2" filePath="&quot;./cities.csv&quot;" dataType="_ufG_UM09EeyvOMTzmB3CAQ"/>
+  <sparkmetamodel:Flow xmi:id="_62J0gM09EeyvOMTzmB3CAQ" base_InformationFlow="_5V14UM09EeyvOMTzmB3CAQ" tag="city"/>
+  <sparkmetamodel:CodeBlock xmi:id="_yUK6cM0_EeyvOMTzmB3CAQ" base_Class="_r_jhwM0_EeyvOMTzmB3CAQ" code="outputPath = &quot;./teams-out.csv&quot;"/>
+  <sparkmetamodel:CodeBlock xmi:id="_-KEKYM0_EeyvOMTzmB3CAQ" base_Class="_9cq44M0_EeyvOMTzmB3CAQ" code="outputPath = &quot;./cities-out.csv&quot;"/>
+  <sparkmetamodel:DatasetTransformation xmi:id="_UQcysM1AEeyvOMTzmB3CAQ" base_Class="_R653oM1AEeyvOMTzmB3CAQ" func="filter($&quot;this.League&quot; === &quot;NBA&quot;)"/>
+  <sparkmetamodel:Flow xmi:id="_Tf_wsM1BEeyvOMTzmB3CAQ" base_InformationFlow="_SWX2MM1BEeyvOMTzmB3CAQ" tag="team"/>
+  <sparkmetamodel:Flow xmi:id="_fhArgM1BEeyvOMTzmB3CAQ" base_InformationFlow="_eD070M1BEeyvOMTzmB3CAQ" priority="1"/>
+  <sparkmetamodel:DatasetAction xmi:id="_lOSXYM1BEeyvOMTzmB3CAQ" base_Class="_jS8FAM1BEeyvOMTzmB3CAQ" func="write.csv(outputPath)"/>
+  <sparkmetamodel:Variable xmi:id="_qrrNIM1BEeyvOMTzmB3CAQ" base_Class="_oB-nAM1BEeyvOMTzmB3CAQ">
+    <dataType xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </sparkmetamodel:Variable>
+  <sparkmetamodel:Argument xmi:id="_wb7UgM1BEeyvOMTzmB3CAQ" base_Association="_vvGqwM1BEeyvOMTzmB3CAQ"/>
+  <sparkmetamodel:Flow xmi:id="_66FVcM1BEeyvOMTzmB3CAQ" base_InformationFlow="_NWR14M1AEeyvOMTzmB3CAQ" priority="5" tag="city"/>
+  <sparkmetamodel:Flow xmi:id="_Gn9R0M1CEeyvOMTzmB3CAQ" base_InformationFlow="_D7C_oM1CEeyvOMTzmB3CAQ" priority="2" tag="city"/>
+  <sparkmetamodel:Variable xmi:id="_YrVFwM1EEeyvOMTzmB3CAQ" base_Class="_Xw9vQM1EEeyvOMTzmB3CAQ">
+    <dataType xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </sparkmetamodel:Variable>
+  <sparkmetamodel:Argument xmi:id="_fh2RoM1EEeyvOMTzmB3CAQ" base_Association="_eCszEM1EEeyvOMTzmB3CAQ"/>
+</xmi:XMI>

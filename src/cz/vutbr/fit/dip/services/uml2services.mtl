@@ -1,0 +1,64 @@
+[comment encoding = UTF-8 /]
+[module uml2services('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+
+
+
+[query public generateComputation(aModel : Model) : String 
+	= invoke('cz.vutbr.fit.dip.services.GenerateComputation', 'generateComputation(org.eclipse.uml2.uml.Model)', Sequence{aModel})
+/]
+
+[query public generateVarDefsInLoop(aModel : Model) : String 
+	= invoke('cz.vutbr.fit.dip.services.GenerateComputation', 'generateVarDefsInLoop(org.eclipse.uml2.uml.Model)', Sequence{aModel})
+/]
+
+[query public generateArgs(aElement : Element) : String 
+	= invoke('cz.vutbr.fit.dip.services.UML2Services', 'generateArgs(org.eclipse.uml2.uml.Element)', Sequence{aElement})
+/]
+
+[query public generateOptionConf(aElement : Element, stereotypeName : String, isConf : Boolean) : String 
+	= invoke('cz.vutbr.fit.dip.services.UML2Services', 'generateOptionConf(org.eclipse.uml2.uml.Element, java.lang.String, java.lang.Boolean)', Sequence{aElement, stereotypeName, isConf})
+/]
+
+
+[query public generateType(arg : Type, aModel : Model) : String 
+	= invoke('cz.vutbr.fit.dip.services.UML2Services', 'generateType(org.eclipse.uml2.uml.Type, org.eclipse.uml2.uml.Model)', Sequence{arg, aModel})
+/]
+
+[query public generateFunctionDefinitionArguments(aClass : Class, aModel : Model, isFirst : Boolean) : String 
+	= invoke('cz.vutbr.fit.dip.services.UML2Services', 'generateFunctionDefinitionArguments(org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Model, java.lang.Boolean)', Sequence{aClass, aModel, isFirst})
+/]
+
+
+[query public generateVariableType(aClass : Class, aModel : Model) : String 
+	= invoke('cz.vutbr.fit.dip.services.UML2Services', 'generateVariableType(org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Model)', Sequence{aClass, aModel})
+/]
+
+[query public isInArguments(aClass : Class, aModel : Model) : Boolean 
+	= invoke('cz.vutbr.fit.dip.services.UML2Services', 'isInArguments(org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Model)', Sequence{aClass, aModel})
+/]
+
+
+[query public containsDataTypes(aModel : Model) : Boolean 
+	= invoke('cz.vutbr.fit.dip.services.UML2Services', 'containsDataTypes(org.eclipse.uml2.uml.Model)', Sequence{aModel})
+/]
+
+
+
+[query public formatVariable(var : String) : String 
+	= invoke('cz.vutbr.fit.dip.services.UML2Services', 'formatVariable(java.lang.String)', Sequence{var})
+/]
+
+[query public formatClassName(var : String) : String 
+	= invoke('cz.vutbr.fit.dip.services.UML2Services', 'formatClassName(java.lang.String)', Sequence{var})
+/]
+
+[query public formatString(var : OclAny) : String 
+	= invoke('cz.vutbr.fit.dip.services.UML2Services', 'formatString(java.lang.Object)', Sequence{var})
+/]
+
+[query public replaceVariableInTaggedValue(taggedValue : String, toReplace : String, replaceBy : String) : String 
+	= invoke('cz.vutbr.fit.dip.services.UML2Services', 
+'replaceVariableInTaggedValue(java.lang.String, java.lang.String, java.lang.String)', Sequence{taggedValue, toReplace, replaceBy})
+/]
+

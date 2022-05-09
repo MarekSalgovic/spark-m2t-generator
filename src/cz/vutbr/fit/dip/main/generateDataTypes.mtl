@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[module generateDataTypes('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+[import cz::vutbr::fit::dip::services::uml2services/]
+[import cz::vutbr::fit::dip::main::generateUtils /]
+
+[template public generateDataTypes(aModel : Model)]
+[for (datatype : DataType | aModel.eContents(DataType))]
+[if not isStereotype(datatype, 'Tuple')]
+[file ('src/main/scala/'+(formatClassName(aModel.name)+'/dataTypes/' + (formatClassName(datatype.name)) + '.scala'), false, 'UTF-8')]
+package [formatClassName(aModel.name)/].dataTypes
+
+case class [datatype.name/](
+	[for (attribute : Property | datatype.eContents(Property))]
+	var [attribute.name/]: [generateType(attribute.type, aModel)/],
+	[/for]
+){
+//[protected (datatype.name)]
+//[/protected]
+}
+[/file]
+[/if]
+[/for]
+[/template]

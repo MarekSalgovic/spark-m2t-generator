@@ -1,0 +1,23 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+[import cz::vutbr::fit::dip::main::generateApplication /]
+[import cz::vutbr::fit::dip::main::generateUtils /]
+[import cz::vutbr::fit::dip::main::generateActions /]
+[import cz::vutbr::fit::dip::main::generateDataTypes /]
+[import cz::vutbr::fit::dip::main::generateSources /]
+[import cz::vutbr::fit::dip::main::generateTransformations /]
+
+[template public main(aModel : Model)] 
+[comment @main /]
+
+[for (m:Model | aModel.eContents(Model))]
+[if m.isStereotype('Spark Application')]
+[generateDataTypes(m)/]
+[generateSourceClasses(m)/]
+[generateActionClasses(m)/]
+[generateTransformationClasses(m)/]
+[generateApplication(m)/]
+[/if]
+[/for]
+[/template]
