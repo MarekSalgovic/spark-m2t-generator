@@ -43,7 +43,7 @@
       <appliedProfile xmi:type="uml:Profile" href="../spark-metamodel/spark-metamodel.profile.uml#_crMAwIwNEeyxgq_SKmJ8ZQ"/>
     </profileApplication>
   </uml:Model>
-  <sparkmetamodel:SparkApplication xmi:id="_WoqRgKtlEey_3v8OjOLJPw" master="argMaster" base_Model="_Tvz1EKtlEey_3v8OjOLJPw">
+  <sparkmetamodel:SparkApplication xmi:id="_WoqRgKtlEey_3v8OjOLJPw" master="argMaster" base_Model="_Tvz1EKtlEey_3v8OjOLJPw" initialCodeBlock="spark.sparkContext.setLogLevel(&quot;ERROR&quot;)">
     <conf xmi:type="sparkmetamodel:Option" xmi:id="_lik3sMMBEeygWLIJWA0Edg" key="something" value="&quot;val&quot;"/>
     <conf xmi:type="sparkmetamodel:Option" xmi:id="_AAlgMMMFEeygWLIJWA0Edg" key="something2" value="&quot;val2&quot;"/>
     <arguments xmi:type="sparkmetamodel:ProgramArgument" xmi:id="_lfqasMMOEeygWLIJWA0Edg" name="argMaster" defaultValue="local[*]">

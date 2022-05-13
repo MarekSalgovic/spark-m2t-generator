@@ -17,7 +17,7 @@ import WordCount.actions._
 
 object WordCountApp {
 	val S_sparkApplication = true
-	val TV_initialCodeBlock = """"""
+	val TV_initialCodeBlock = """spark.sparkContext.setLogLevel(\"ERROR\")"""
 	val TV_arguments = """[org.eclipse.emf.ecore.impl.DynamicEObjectImpl@427ae189 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@4ced35ed (name: ProgramArgument) (instanceClassName: null) (abstract: false, interface: false)), org.eclipse.emf.ecore.impl.DynamicEObjectImpl@d1d8e1a (eClass: org.eclipse.emf.ecore.impl.EClassImpl@4ced35ed (name: ProgramArgument) (instanceClassName: null) (abstract: false, interface: false)), org.eclipse.emf.ecore.impl.DynamicEObjectImpl@5434e40c (eClass: org.eclipse.emf.ecore.impl.EClassImpl@4ced35ed (name: ProgramArgument) (instanceClassName: null) (abstract: false, interface: false)), org.eclipse.emf.ecore.impl.DynamicEObjectImpl@514de325 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@4ced35ed (name: ProgramArgument) (instanceClassName: null) (abstract: false, interface: false))]"""
 	val TV_master = """argMaster"""
 	val TV_conf = """[org.eclipse.emf.ecore.impl.DynamicEObjectImpl@69d23296 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@610db97e (name: Option) (instanceClassName: null) (abstract: false, interface: false)), org.eclipse.emf.ecore.impl.DynamicEObjectImpl@3fba233d (eClass: org.eclipse.emf.ecore.impl.EClassImpl@610db97e (name: Option) (instanceClassName: null) (abstract: false, interface: false))]"""
@@ -38,7 +38,7 @@ object WordCountApp {
 						.set("something", "val")
 						.set("something2", "val2")
 		val spark: SparkSession = SparkSession.builder.config(conf).getOrCreate()
-		
+		spark.sparkContext.setLogLevel("ERROR")
 		//Start of user code post-sparkSession
 		//End of user code
 		

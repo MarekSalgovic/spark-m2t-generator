@@ -1,0 +1,123 @@
+Name,City,State,Venue,League
+Celtics,Boston,Massachusetts,TD Garden,NBA
+Nets,Brooklyn,New York,Barclays Center,NBA
+Knicks,New York,New York,Madison Square Garden,NBA
+76ers,Philadelphia,Pennsylvania,Wells Fargo Center,NBA
+Raptors,Toronto,Ontario,Air Canada Centre,NBA
+Bulls,Chicago,Illinois,United Center,NBA
+Cavaliers,Cleveland,Ohio,Quicken Loans Arena,NBA
+Pistons,Detriot,Michigan,The Palace of Auburn Hills,NBA
+Pacers,Indianapolis,Indiana,Bankers Life Fieldhouse,NBA
+Bucks,Milwaukee,Wisconsin,Bradley Center,NBA
+Hawks,Atlanta,Georgia,Philips Arena,NBA
+Bobcats,Charlotte,North Carolina,Time Warner Cable Arena,NBA
+Heat,Miami,Florida,AmericanAirlines Arena,NBA
+Magic,Orlando,Florida,Amway Center,NBA
+Wizards,Washington,D.C.,Verizon Center,NBA
+Nuggets,Denver,Colorado,Pepsi Center,NBA
+Timberwolves,Minneapolis,Minnesota,Target Center,NBA
+Thunder,Oklahoma City,Oklahoma,Chesapeake Energy Arena,NBA
+Trail Blazers,Portland,Oregon,Rose Garden,NBA
+Jazz,Salt Lake City,Utah,EnergySolutions Arena,NBA
+Warriors,Oakland,California,Oracle Arena,NBA
+Clippers,Los Angeles,California,Staples Center,NBA
+Lakers,Los Angeles,California,Staples Center,NBA
+Suns,Phoenix,Arizona,US Airways Center,NBA
+Kings,Sacramento,California,Power Balance Pavilion,NBA
+Mavericks,Dallas,Texas,American Airlines Center,NBA
+Rockets,Houston,Texas,Toyota Center,NBA
+Grizzlies,Memphis,Tennessee,FedExForum,NBA
+Hornets,New Orleans,Louisiana,New Orleans Arena,NBA
+Spurs,San Antonio,Texas,AT&T Center,NBA
+Braves,Atlanta,Georgia,Turner Field,MLB
+Marlins,Miami,Florida,Marlins Park,MLB
+Mets,New York,New York,Citi Field,MLB
+Phillies,Philadelphia,Pennsylvania,Citizens Bank Park,MLB
+Nationals,Washington,D.C.,Nationals Park,MLB
+Cubs,Chicago,Illinois,Wrigley Field,MLB
+Reds,Cincinnati,Ohio,Great American Ball Park,MLB
+Brewers,Milwaukee,Wisconsin,Miller Park,MLB
+Pirates,Pittsburgh,Pennsylvania,PNC Park,MLB
+Cardinals,St. Louis,Missouri,Busch Stadium,MLB
+Diamondbacks,Phoenix,Arizona,Chase Field,MLB
+Rockies,Denver,Colorado,Coors Field,MLB
+Dodgers,Los Angeles,California,Dodger Stadium,MLB
+Padres,San Diego,California,PETCO Park,MLB
+Giants,San Francisco,California,AT&T Park,MLB
+Orioles,Baltimore,Maryland,Oriole Park at Camden Yards,MLB
+Red Sox,Boston,Massachusetts,Fenway Park,MLB
+Yankees,New York,New York,Yankee Stadium,MLB
+Rays,Tampa,Florida,Tropicana Field,MLB
+Blue Jays,Toronto,Ontario,Rogers Centre,MLB
+White Sox,Chicago,Illinois,U.S. Cellular Field,MLB
+Indians,Cleveland,Ohio,Progressive Field,MLB
+Tigers,Detroit,Michigan,Comerica Park,MLB
+Royals,Kansas City,Missouri,Kauffman Stadium,MLB
+Twins,Minneapolis,Minnesota,Target Field,MLB
+Astros,Houston,Texas,Minute Maid Park,MLB
+Angels,Anaheim,California,Angel Stadium of Anaheim,MLB
+Athletics,Oakland,California,O.co Coliseum,MLB
+Mariners,Seattle,Washington,Safeco Field,MLB
+Rangers,Arlington,Texas,Rangers Ballpark in Arlington,MLB
+Bills,Orchard Park,New York,Ralph Wilson Stadium,NFL
+Dolphins,Miami Gardens,Florida,Sun Life Stadium,NFL
+Patriots,Foxborough,Massachusetts,Gillette Stadium,NFL
+Jets,East Rutherford,New Jersey,MetLife Stadium,NFL
+Ravens,Baltimore,Maryland,M&T Bank Stadium,NFL
+Bengals,Cincinnati,Ohio,Paul Brown Stadium,NFL
+Browns,Cleveland,Ohio,Cleveland Browns Stadium,NFL
+Steelers,Pittsburgh,Pennsylvania,Heinz Field,NFL
+Texans,Houston,Texas,Reliant Stadium,NFL
+Colts,Indianapolis,Indiana,Lucas Oil Stadium,NFL
+Jaguars,Jacksonville,Florida,EverBank Field,NFL
+Titans,Nashville,Tennessee,LP Field,NFL
+Broncos,Denver,Colorado,Sports Authority Field at Mile High,NFL
+Chiefs,Kansas City,Missouri,Arrowhead Stadium,NFL
+Raiders,Oakland,California,O.co Coliseum,NFL
+Chargers,San Diego,California,Qualcomm Stadium,NFL
+Cowboys,Arlington,Texas,Cowboys Stadium,NFL
+Giants,East Rutherford,New Jersey,MetLife Stadium,NFL
+Eagles,Philadelphia,Pennsylvania,Lincoln Financial Field,NFL
+Redskins,Landover,Maryland,FedExField,NFL
+Bears,Chicago,Illinois,Soldier Field,NFL
+Lions,Detroit,Michigan,Ford Field,NFL
+Packers,Green Bay,Wisconsin,Lambeau Field,NFL
+Vikings,Minneapolis,Minnesota,Hubert H. Humphrey Metrodome,NFL
+Falcons,Atlanta,Georgia,Georgia Dome,NFL
+Panthers,Charlotte,North Carolina,Bank of America Stadium,NFL
+Saints,New Orleans,Louisiana,Mercedes-Benz Superdome,NFL
+Buccaneers,Tampa,Florida,Raymond James Stadium,NFL
+Cardinals,Phoenix,Arizona,University of Phoenix Stadium,NFL
+Rams,St. Louis,Missouri,Edward Jones Dome,NFL
+49ers,San Francisco,California,Candlestick Park,NFL
+Seahawks,Seattle,Washington,CenturyLink Field,NFL
+Devils,Newark,New Jersey,Prudential Center,NHL
+Islanders,New York,New York,Nassau Veterans Memorial Coliseum,NHL
+Rangers,New York,New York,Madison Square Garden,NHL
+Flyers,Philadelphia,Pennsylvania,Wells Fargo Center,NHL
+Penguins,Pittsburgh,Pennsylvania,Consol Energy Center,NHL
+Bruins,Boston,Massachusetts,TD Garden,NHL
+Sabres,Buffalo,New York,First Niagara Center,NHL
+Canadiens,Montreal,Quebec,Bell Centre,NHL
+Senators,Ottawa,Ontario,Scotiabank Place,NHL
+Maple Leafs,Toronto,Ontario,Air Canada Centre,NHL
+Hurricanes,Raleigh,North Carolina,RBC Center,NHL
+Panthers,Sunrise,Florida,BankAtlantic Center,NHL
+Lightning,Tampa,Florida,Tampa Bay Times Forum,NHL
+Capitals,Washington,D.C.,Verizon Center,NHL
+Jets,Winnipeg,Manitoba,MTS Centre,NHL
+Blackhawks,Chicago,Illinois,United Center,NHL
+Blue Jackets,Columbus,Ohio,Nationwide Arena,NHL
+Red Wings,Detroit,Michigan,Joe Louis Arena,NHL
+Predators,Nashville,Tennessee,Bridgestone Arena,NHL
+Blues,St. Louis,Missouri,Scottrade Center,NHL
+Flames,Calgary,Alberta,Scotiabank Saddledome,NHL
+Avalanche,Denver,Colorado,Pepsi Center,NHL
+Oilers,Edmonton,Alberta,Rexall Place,NHL
+Wild,St. Paul,Minnesota,Xcel Energy Center,NHL
+Canucks,Vancouver,British Columbia,Rogers Arena,NHL
+Ducks,Anaheim,California,Honda Center,NHL
+Stars,Dallas,Texas,American Airlines Center,NHL
+Kings,Los Angeles,California,Staples Center,NHL
+Coyotes,Phoenix,Arizona,Jobing.com Arena,NHL
+Sharks,San Jose,California,HP Pavilion at San Jose,NHL
