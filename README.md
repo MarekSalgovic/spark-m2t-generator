@@ -13,7 +13,7 @@
  - Makefile - sluzi na vygenerovanie kodu pre priklady
 
 ### Vygenerovanie kodu z prikladov:
-    make
+    Eclipse Acceleo plug-in
 
 ### Vytvorenie spustitelneho balika z vygenerovaneho kodu:
     cd out
