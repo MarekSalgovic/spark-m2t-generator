@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" output="bin" path="src"/>
+	<classpathentry kind="lib" path="libs/com.google.guava_30.1.0.v20210127-2300.jar"/>
+	<classpathentry kind="lib" path="libs/lpg.runtime.java_2.0.17.v201004271640.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.acceleo.common_3.7.11.202102190929.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.acceleo.engine_3.7.11.202102190929.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.acceleo.model_3.7.11.202102190929.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.acceleo.parser_3.7.11.202102190929.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.acceleo.parser-3.5.1.201409021433.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.acceleo.profiler_3.7.11.202102190929.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.core.contenttype_3.8.100.v20210910-0640.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.core.jobs_3.12.0.v20210723-1034.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.core.runtime_3.24.0.v20210910-0750.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.emf.codegen_2.22.0.v20210420-0623.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.emf.codegen.ecore_2.28.0.v20210925-0555.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.emf.common_2.23.0.v20210924-1718.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.emf.ecore_2.25.0.v20210816-0937.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.emf.ecore.xmi_2.16.0.v20190528-0725.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.emf.mapping.ecore2xml_2.11.0.v20180706-1146.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.equinox.app_1.6.100.v20211021-1418.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.equinox.common_3.15.100.v20211021-1418.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.equinox.preferences_3.9.100.v20211021-1418.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.equinox.registry_3.11.100.v20211021-1418.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.ocl_3.17.0.v20211130-1448.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.ocl.common_1.17.0.v20211130-1448.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.ocl.ecore_3.17.0.v20211130-1448.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.osgi_3.17.100.v20211104-1730.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.osgi.compatibility.state_1.2.500.v20210730-0750.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.uml2.common_2.5.0.v20210228-1829.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.uml2.types_2.5.0.v20210228-1829.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.uml2.uml_5.5.0.v20210228-1829.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.uml2.uml.profile.standard_1.5.0.v20210228-1829.jar"/>
+	<classpathentry kind="lib" path="libs/org.eclipse.uml2.uml.resources_5.5.0.v20210228-1829.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

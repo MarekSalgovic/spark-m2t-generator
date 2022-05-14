@@ -15,11 +15,11 @@ import SparkPageRank.actions._
 
 object SparkPageRankApp {
 	val S_sparkApplication = true
-	val TV_arguments = """[org.eclipse.emf.ecore.impl.DynamicEObjectImpl@17461db (eClass: org.eclipse.emf.ecore.impl.EClassImpl@2c0f7678 (name: ProgramArgument) (instanceClassName: null) (abstract: false, interface: false)), org.eclipse.emf.ecore.impl.DynamicEObjectImpl@3f1a4795 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@2c0f7678 (name: ProgramArgument) (instanceClassName: null) (abstract: false, interface: false))]"""
-	val TV_conf = """[]"""
 	val TV_imports = """[]"""
-	val TV_initialCodeBlock = """"""
 	val TV_master = """\"local[*]\""""
+	val TV_initialCodeBlock = """"""
+	val TV_conf = """[]"""
+	val TV_arguments = """[org.eclipse.emf.ecore.impl.DynamicEObjectImpl@643d2dae (eClass: org.eclipse.emf.ecore.impl.EClassImpl@18388a3c (name: ProgramArgument) (instanceClassName: null) (abstract: false, interface: false)), org.eclipse.emf.ecore.impl.DynamicEObjectImpl@5b275811 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@18388a3c (name: ProgramArgument) (instanceClassName: null) (abstract: false, interface: false))]"""
 	
 	
 	def main(args: Array[String]) {

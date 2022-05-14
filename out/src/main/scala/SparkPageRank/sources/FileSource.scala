@@ -12,11 +12,11 @@ import scala.reflect.runtime.universe.typeOf
 
 class FileSource(spark: SparkSession) {
 	val S_fileSource = true
+	val TV_options = """[]"""
+	val TV_format = """org.eclipse.uml2.uml.internal.impl.EnumerationLiteralImpl@7544ac86 (name: Text, visibility: <unset>)"""
 	val TV_dataType = """"""
 	val TV_priority = """0"""
 	val TV_filePath = """filePath"""
-	val TV_options = """[]"""
-	val TV_format = """org.eclipse.uml2.uml.internal.impl.EnumerationLiteralImpl@a9f023e (name: Text, visibility: <unset>)"""
 	
 	def source(filePath: String) = {
 			spark.sparkContext.textFile(filePath)
