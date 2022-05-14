@@ -376,21 +376,8 @@ public class Main extends AbstractAcceleoGenerator {
          * stand alone, the regular registration (seen a couple lines before) is needed.
          * 
          * To learn more about Package Registration, have a look at the Acceleo documentation (Help -> Help Contents).
-         */
+   		 */
         
-        if (!isInWorkspace(org.eclipse.emf.ecore.EcorePackage.class)) {
-            resourceSet.getPackageRegistry().put(org.eclipse.emf.ecore.EcorePackage.eINSTANCE.getNsURI(), org.eclipse.emf.ecore.EcorePackage.eINSTANCE);
-        }
-        if (!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
-        }
-        
-        resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
-        Map<URI, URI> uriMap = resourceSet.getURIConverter().getURIMap();
-        URI uri = URI.createURI("jar:file:" + System.getProperty("user.dir").replace("\\", "/") + "/libs/org.eclipse.uml2.uml.resources_5.3.0.v20170605-1616.jar!/"); // absolute path!!
-        uriMap.put(URI.createURI(UMLResource.LIBRARIES_PATHMAP), uri.appendSegment("libraries").appendSegment(""));
-        uriMap.put(URI.createURI(UMLResource.METAMODELS_PATHMAP), uri.appendSegment("metamodels").appendSegment(""));
-        uriMap.put(URI.createURI(UMLResource.PROFILES_PATHMAP), uri.appendSegment("profiles").appendSegment(""));        
     }
 
     /**

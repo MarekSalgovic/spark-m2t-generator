@@ -22,4 +22,4 @@ Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Export-Package: cz.vutbr.fit.dip.main,
  cz.vutbr.fit.dip.services
-
+Bundle-ClassPath: bin/
